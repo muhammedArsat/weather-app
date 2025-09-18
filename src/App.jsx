@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./sections/Header";
 import Hero from "./sections/Hero";
 import Weather from "./sections/Weather";
+import WeatherDetails from "./sections/WeatherDetails";
 
 const App = () => {
   return (

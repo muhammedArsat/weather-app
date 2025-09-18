@@ -1,14 +1,11 @@
 import React from 'react'
 import WeatherBg from '../assets/bg-today-large.svg'
-import Sun from '../assets/icon-sunny.webp';
-import Rainy from '../assets/icon-rain.webp';
-import Snow from '../assets/icon-snow.webp';
-import Storm from '../assets/icon-storm.webp';
+import { climateIcons } from '../constants/constants'
 
 const LocationWeather = () => {
-    const climateIcons = [Sun,Rainy,Snow,Storm]
+    
   return (
-    <div className=' basis-3/4 md:px-10 flex justify-between items-center relative md:h-[300px] rounded-lg '
+    <div className=' basis-3/4 md:px-10 flex justify-between items-center relative md:min-h-[300px] rounded-lg grow '
     style={{
         backgroundImage:`url(${WeatherBg})`,
         backgroundSize:'cover',

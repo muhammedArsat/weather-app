@@ -4,30 +4,50 @@
 @theme {
   --font-heading: "Bricolage Grotesque", sans-serif;
   --font-body: "DM Sans", sans-serif;
-  
 }
 
-body{
-  @apply bg-gradient-to-r from-black to-blue-950 text-white
+body {
+  @apply bg-gradient-to-r from-black to-blue-950 text-white;
 }
-h1{
-  @apply font-heading font-bold text-[28px] md:text-[45px]
+h1 {
+  @apply font-heading font-bold text-[28px] md:text-[45px];
 }
-h2{
-  @apply font-body font-semibold text-[25px]
-}
-
-h3{
-  @apply font-body font-normal text-[18px]
+h2 {
+  @apply font-body font-semibold text-[25px];
 }
 
-p{
-  @apply font-body font-light text-[18px]
+h3 {
+  @apply font-body font-normal text-[18px];
 }
 
-select{
+p {
+  @apply font-body font-light text-[18px];
+}
+
+select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background:none;
+  background: none;
+}
+
+/* Custom scrollbar for HourlyWeather */
+.max-h-\[630px\].overflow-y-auto::-webkit-scrollbar {
+  width: 8px;
+}
+
+.max-h-\[630px\].overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #52525b; /* Tailwind neutral-600 */
+  border-radius: 8px;
+}
+
+.max-h-\[630px\].overflow-y-auto::-webkit-scrollbar-track {
+  background: #27272a; /* Tailwind neutral-700 */
+  border-radius: 8px;
+}
+
+/* For Firefox */
+.max-h-\[630px\].overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #52525b #27272a;
 }
