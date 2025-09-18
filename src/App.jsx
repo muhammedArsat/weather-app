@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import Header from "./sections/Header";
+import Hero from "./sections/Hero";
+import Weather from "./sections/Weather";
 
 const App = () => {
   return (
-    <div>
-      <h1>Weather-App</h1>
+    <div className="flex flex-col md:px-10 md:py-10 gap-4">
+      <Header />
+      <Hero />
+      <Weather />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
