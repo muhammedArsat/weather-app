@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Dropdown from "../assets/icon-dropdown.svg";
 import { climateIcons } from "../constants/constants";
+import WeatherContext from "../WeatherContext";
 const HourlyWeather = () => {
   const days = [
     "Monday",
@@ -81,6 +82,9 @@ const HourlyWeather = () => {
   const handleDayMenu = () => {
     setIsDayMenuOpen(!isDayMenuOpen);
   };
+
+  const { weatherData } = useContext(WeatherContext);
+
   return (
     <div className="bg-neutral-700 p-2 rounded-lg basis-1/4 flex space-y-4 flex-col relative max-h-[630px] overflow-y-auto">
       <div className="flex justify-between items-center">
@@ -97,7 +101,10 @@ const HourlyWeather = () => {
           >
             {days.map((day, idx) => {
               return (
-                <p key={idx} className="hover:bg-neutral-600 transition-all rounded-lg px-2">
+                <p
+                  key={idx}
+                  className="hover:bg-neutral-600 transition-all rounded-lg px-2"
+                >
                   {day}
                 </p>
               );
@@ -110,9 +117,16 @@ const HourlyWeather = () => {
       <div className="flex flex-col space-y-4">
         {hourlyWeather.map((hour, idx) => {
           return (
-            <span className="w-full flex justify-between items-center bg-neutral-600 p-2 rounded-lg ">
+            <span
+              key={idx}
+              className="w-full flex justify-between items-center bg-neutral-600 p-2 rounded-lg "
+            >
               <span className="flex items-center space-x-4">
-                <img src={climateIcons[hour.iconCode]} alt="climate Icon" className="w-8 h-8" />
+                <img
+                  src={climateIcons[hour.iconCode]}
+                  alt="climate Icon"
+                  className="w-8 h-8"
+                />
                 <p>{hour.time}</p>
               </span>
               <p>{hour.temp}&deg;c</p>
