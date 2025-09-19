@@ -6,12 +6,13 @@ import WeatherDetails from "./sections/WeatherDetails";
 import WeatherContext, { WeatherProvider } from "./WeatherContext";
 
 const App = () => {
-  const { location } = useContext(WeatherContext);
+  const { location,weatherData } = useContext(WeatherContext);
+  
   return (
-    <div className="flex flex-col md:px-10 md:py-10 gap-4">
+    <div className="flex flex-col px-2 md:px-10 md:py-10 gap-2 md:gap-4 py-4">
       <Header />
       <Hero />
-      {location && <Weather />}
+      <Weather />
     </div>
   );
 };

@@ -5,7 +5,7 @@ const WeatherContext = createContext();
 const WeatherProvider = ({children}) => {
 
     const [location, setLocation] = useState(null);
-    const [weatherData, setWeatherData] = useState([]);
+    const [weatherData, setWeatherData] = useState(null);
     const [index, setIndex] = useState(0);
 
     useEffect(()=>{
@@ -32,7 +32,7 @@ const WeatherProvider = ({children}) => {
       }
     }
   return (
-    <WeatherContext.Provider value={{index,setIndex,location, setLocation, fetchWeatherDetails, weatherData}}>
+    <WeatherContext.Provider value={{index,setIndex,location, setLocation, fetchWeatherDetails, weatherData,setWeatherData}}>
       {children}
     </WeatherContext.Provider>
   )

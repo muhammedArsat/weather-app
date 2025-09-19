@@ -17,8 +17,9 @@ export const fetchLocations = async (location) => {
 
 export const fetchLocationWeather = async (lat, long) => {
   try {
-    const res = await axios.get(`    
- https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,precipitation,precipitation_probability,relativehumidity_2m,winddirection_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,winddirection_10m_dominant&forecast_days=7&timezone=auto`);
+    const res = await axios.get(
+      `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,precipitation,precipitation_probability,relativehumidity_2m,winddirection_10m,weathercode&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,winddirection_10m_dominant,weathercode&forecast_days=7&timezone=auto`
+    );
     return res.data;
   } catch (err) {}
 };
